@@ -1,0 +1,23 @@
+<form #editStockForm (ngSubmit)="formSubmit(editStockForm)">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name">Flower Name</label>
+        <input type="text" disabled class="form-control" id="flowerName" name="flowerName" [(ngModel)]="selectedFlower.name">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="price">Flower price</label>
+        <input type="text" class="form-control" id="price" name="flowerPrice" [(ngModel)]="selectedFlower.price">
+    </div>
+  </div>
+  <div class="col-md-6">
+      <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="text" class="form-control" id="quantity" name="flowerQuantity" [(ngModel)]="selectedFlower.quantity">
+    </div>
+  </div> 
+  </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

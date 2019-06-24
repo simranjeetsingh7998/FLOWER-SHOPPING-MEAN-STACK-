@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-3">
+      <app-sidebar> </app-sidebar>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+            <h3 [ngStyle] = "getTitleStyles()">Pending Orders</h3>
+            <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>{{flowerName}}</th>
+                    <th>{{flowerPrice}}</th>
+                    <th>{{flowerQuantity}}</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let flower of flowerList">
+                    <td>{{flower.name}}</td>
+                    <td>{{flower.price}}</td>
+                    <td>{{flower.quantity}}</td>
+                    <td><button class="btn btn-info" id="completeOrderButton" (click)=processOrder(flower)>✓</button></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>    
+    </div>
+  </div>
+
+

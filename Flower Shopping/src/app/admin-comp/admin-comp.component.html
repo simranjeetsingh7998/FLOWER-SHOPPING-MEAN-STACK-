@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-3">
+    <nav class="navbar navbar-default" role="navigation">
+      <div id="sidebar-wrapper" class="sidebar-toggle">
+        <ul class="sidebar-nav">
+          <li>
+            <a routerLink="/addStock">Add Stock</a>
+          </li>
+          <li>
+            <a routerLink="/admin">Stock</a>
+          </li>
+          <li>
+            <a routerLink="/order">Orders</a>
+          </li>
+          <li>
+            <a routerLink="/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="headTxt">
+          <h3 *ngIf="txt">Pending Orders</h3>
+          <h3 *ngIf="!txt">Stock</h3>
+        </div>
+        <table class="table table-responsive table-hover">
+          <thead>
+            <tr class="table-secondary">
+              <th>{{flowerName}}</th>
+              <th>{{flowerPrice}}</th>
+              <th>{{flowerQuantity}}</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let flower of flowerList">
+              <td>{{flower.name | uppercase}}</td>
+              <td>{{flower.price}}</td>
+              <td>{{flower.quantity}}</td>
+              <td>
+                <button class="btn" id="completeOrderButton" (click)="process(flower)">
+                  <div *ngIf="!txt">Edit</div>
+                  <div *ngIf="txt">Process</div>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <app-edit-stock *ngIf="displayEdit" [selectedFlower]="currFlower" (flowerUpdated)="updateFlower($event)"></app-edit-stock>
+    </div>
+  </div>
+</div>

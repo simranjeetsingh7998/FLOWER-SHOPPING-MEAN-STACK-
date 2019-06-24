@@ -1,0 +1,8 @@
+<div class="row sidenav" ng-controller="HeaderController">
+        <div class="col-md-12 col-sm-12">
+                <ul class="nav navbar-nav">  
+                        <li ng-class="{ active: isActive('/admin')}"><a routerLink="/admin">Stock</a></li>
+                        <li ng-class="{ active: isActive('/order')}"><a routerLink="/order">Orders</a></li>
+                </ul>
+        </div>
+</div>

@@ -1,0 +1,26 @@
+.navbar {
+    height: 14%;
+    background-color: rgba(255, 255, 255, 0.5);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 0 10px rgb(0, 0, 0);
+    -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
+    box-shadow: 0 0 10px #000000;
+}
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    
+}
+
+.logo {
+    height: 12vh;
+}
+

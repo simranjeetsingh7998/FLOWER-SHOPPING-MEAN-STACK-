@@ -1,0 +1,34 @@
+<div class="container">
+  <h3 [ngStyle]="getTitleStyles()">Stock</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{flowerName}}</th>
+        <th>{{flowerPrice}}</th>
+        <th>{{flowerQuantity}}</th>
+        <th>Check to order</th>
+        <th>{{orderQuantity}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flower of flowerList">
+        <td>{{flower.name}}</td>
+        <td>{{flower.price}}</td>
+        <td>{{flower.quantity}}</td>
+        <td>
+          <input type="checkbox" name="addToOrder" [(ngModel)]="flower.isChecked">
+        </td>
+        <td>
+          <input type="number" name="orderQuant" ngInit="flower.orderQuan='0'" min="0" max="{{flower.quantity}}" [(ngModel)]="flower.orderQuan"
+            *ngIf="flower.isChecked">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success" (click)="submitOrder()">Checkout</button>
+
+  <a routerLink="/home">
+    <button class="btn btn-danger pull-right">Logout</button>
+  </a>
+
+</div>

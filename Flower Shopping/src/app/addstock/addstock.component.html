@@ -1,0 +1,32 @@
+<form #addStockForm (ngSubmit)="formSubmit(addStockForm)">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="name">Flower Name</label>
+                <input type="text" class="form-control" id="flowerName" name="flowerName">
+              </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                  <label for="price">Flower price</label>
+                  <input type="text" class="form-control" id="price" name="flowerPrice">
+                </div>
+            </div>
+      </div>
+      <div class="row ">
+          <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                  <label for="quantity">Quantity Available</label>
+                  <input type="text" class="form-control" id="quantity" name="flowerQuantity">
+                </div>          
+          </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>  
+  <button routerLink="/admin" class="btn btn-danger">Cancel</button>
+</form>
